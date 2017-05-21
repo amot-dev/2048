@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+}
+
+#container {
+    width: 460px;
+    margin: auto;
+}
+
+.unit {
+
+    height: 105px;
+    width: 105px;
+    margin: 5px;
+    float: left;
+}
+.empty {
+    background-color: gray;
+}
+.filled {
+    background-color: orange;
+    line-height: 105px;
+    text-align: center;
+    font-size: 5em;
+    font-family: verdana;
+}
+
+h1 {
+
+}

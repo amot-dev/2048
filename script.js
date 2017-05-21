@@ -227,7 +227,10 @@ $(document).ready(function() {
 
     function addUnit() {
         var unitSelector = parseInt(Math.floor(Math.random() * 15));    //generate random number between 0-15 for unit selection
-        var emptyUnit = $('.empty');
+        var thisUnit = $('.unit');
+        while ($(thisUnit[unitSelector]).hasClass('filled')) {
+            unitSelector = parseInt(Math.floor(Math.random() * 15));    //generate random number between 0-15 for unit selection
+        }
         var startingNumber = parseInt(Math.floor(Math.random() * 2));   //generate random number between 0-1 for starting number
         if (startingNumber == 1) {
             startingNumber = "2";
@@ -235,7 +238,7 @@ $(document).ready(function() {
         else {
             startingNumber = "4";
         }
-        $(emptyUnit[unitSelector]).toggleClass('empty filled');         //add random number to random div
-        $(emptyUnit[unitSelector]).text(startingNumber);
+        $(thisUnit[unitSelector]).toggleClass('empty filled');         //add random number to random div
+        $(thisUnit[unitSelector]).text(startingNumber);
     }
 })

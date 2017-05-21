@@ -40,8 +40,11 @@ body {
     line-height: 50px;
     height: 50px;
     width: 80px;
-    clear: both;
     float: left;
+}
+
+#up {
+    clear: both;
 }
 
 #container {

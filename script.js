@@ -56,6 +56,7 @@ $(document).ready(function() {
                     }
                 }
             } while (changesMade)
+            addUnit();                                                      //add another unit
         }
         if (e.keyCode == 40) {  //DOWN
             do {
@@ -97,6 +98,7 @@ $(document).ready(function() {
                     }
                 }
             } while (changesMade)
+            addUnit();                                                      //add another unit
         }
         if (e.keyCode == 37) {  //LEFT
             do {
@@ -138,6 +140,7 @@ $(document).ready(function() {
                     }
                 }
             } while (changesMade);
+            addUnit();                                                      //add another unit
         }
         if (e.keyCode == 39) {  //RIGHT
             do {
@@ -179,8 +182,8 @@ $(document).ready(function() {
                     }
                 }
             } while (changesMade);
+            addUnit();                                                      //add another unit
         }
-        addUnit();                                                      //add another unit
         $("#currentScore").text(score);                                 //update current score display
         $("#highScore").text(highScore);                                //update high score display
     })

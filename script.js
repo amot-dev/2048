@@ -1,6 +1,6 @@
 $(document).ready(function() {
     for (i = 0; i < 16; i++) {
-        $("#container").append('<div class="unit empty"></div>');       //generate the 16 boxes
+        $("#container").append('<div class="unit empty"> </div>');       //generate the 16 boxes
     }
 
     addUnit();
@@ -11,7 +11,7 @@ $(document).ready(function() {
         var dir = null;
         var num = null;
         if (e.keyCode == 38) {  //UP
-            for (i = 0; i < 15; i++) {
+            for (i = 0; i < 16; i++) {
                 dir = findDirections(i);
                 if (dir.u < 16) {
                     //check that the current unit has content and the one above does not
@@ -33,7 +33,7 @@ $(document).ready(function() {
             }
         }
         if (e.keyCode == 40) {  //DOWN
-            for (i = 0; i < 15; i++) {
+            for (i = 0; i < 16; i++) {
                 dir = findDirections(i);
                 if (dir.d < 16) {
                     //check that the current unit has content and the one below does not
@@ -55,7 +55,7 @@ $(document).ready(function() {
             }
         }
         if (e.keyCode == 37) {  //LEFT
-            for (i = 0; i < 15; i++) {
+            for (i = 0; i < 16; i++) {
                 dir = findDirections(i);
                 if (dir.l < 16) {
                     //check that the current unit has content and the one to the left does not
@@ -77,7 +77,7 @@ $(document).ready(function() {
             }
         }
         if (e.keyCode == 39) {  //RIGHT
-            for (i = 0; i < 15; i++) {
+            for (i = 0; i < 16; i++) {
                 dir = findDirections(i);
                 if (dir.r < 16) {
                     //check that the current unit has content and the one to the right does not

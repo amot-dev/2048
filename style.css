@@ -40,10 +40,15 @@ body {
     line-height: 50px;
     height: 50px;
     width: 80px;
-    margin: auto;
     float: left;
     display: inline;
 }
+
+#up {
+    margin: auto;
+    clear: both;
+}
+
 
 #container {
     width: 460px;

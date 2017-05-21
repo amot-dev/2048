@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    highScore = localStorage['high'] || 0;
+    score = 0;
+    $("#currentScore").text(score);                                     //update current score display
+    $("#highScore").text(highScore);                                    //update high score display
     for (i = 0; i < 16; i++) {
         $("#container").append('<div class="unit empty"> </div>');       //generate the 16 boxes
     }
@@ -37,10 +41,16 @@ $(document).ready(function() {
                             if (num == num2) {
                                 $(thisUnit[dir.u]).text((num * 2));         //set value of current * 2 to above
 
+                                score += (num * 2);                         //increase score
+                                if (score > highScore) {
+                                    highScore = score;
+                                    localStorage['high'] = highScore;       //update high score
+                                }
+
                                 $(thisUnit[i]).toggleClass("filled empty"); //set current to empty
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
-                                changesMade = true;                             //will redo the loop once it's done
+                                changesMade = true;                         //will redo the loop once it's done
                             }
                         }
                     }
@@ -72,10 +82,16 @@ $(document).ready(function() {
                             if (num == num2) {
                                 $(thisUnit[dir.d]).text((num * 2));         //set value of current * 2 to below
 
+                                score += (num * 2);                         //increase score
+                                if (score > highScore) {
+                                    highScore = score;
+                                    localStorage['high'] = highScore;       //update high score
+                                }
+
                                 $(thisUnit[i]).toggleClass("filled empty"); //set current to empty
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
-                                changesMade = true;                             //will redo the loop once it's done
+                                changesMade = true;                         //will redo the loop once it's done
                             }
                         }
                     }
@@ -107,10 +123,16 @@ $(document).ready(function() {
                             if (num == num2) {
                                 $(thisUnit[dir.l]).text((num * 2));         //set value of current * 2 to left
 
+                                score += (num * 2);                         //increase score
+                                if (score > highScore) {
+                                    highScore = score;
+                                    localStorage['high'] = highScore;       //update high score
+                                }
+
                                 $(thisUnit[i]).toggleClass("filled empty"); //set current to empty
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
-                                changesMade = true;                             //will redo the loop once it's done
+                                changesMade = true;                         //will redo the loop once it's done
                             }
                         }
                     }
@@ -142,10 +164,16 @@ $(document).ready(function() {
                             if (num == num2) {
                                 $(thisUnit[dir.r]).text((num * 2));         //set value of current * 2 to right
 
+                                score += (num * 2);                         //increase score
+                                if (score > highScore) {
+                                    highScore = score;
+                                    localStorage['high'] = highScore;       //update high score
+                                }
+
                                 $(thisUnit[i]).toggleClass("filled empty"); //set current to empty
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
-                                changesMade = true;                             //will redo the loop once it's done
+                                changesMade = true;                         //will redo the loop once it's done
                             }
                         }
                     }
@@ -153,6 +181,8 @@ $(document).ready(function() {
             } while (changesMade);
         }
         addUnit();                                                      //add another unit
+        $("#currentScore").text(score);                                 //update current score display
+        $("#highScore").text(highScore);                                //update high score display
     })
 
     function findDirections(gridNum) {

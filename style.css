@@ -1,14 +1,47 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     background-color: black;
+    width: 960px;
+    margin: auto;
+}
+
+#header {
+    margin: 10px;
+    margin-bottom: 5px;
+    background-color: orange;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    width: 100%;
+}
+
+#wrapper {
+    background-color: green;
+    width: 960px;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+.edge {
+    background-color: orange;
+    width: 245px;
+    height: 450px;
+    margin-top: 5px;
+    float: left;
 }
 
 #container {
     width: 460px;
-    margin: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
 }
 
 .unit {
-
     height: 105px;
     width: 105px;
     margin: 5px;
@@ -25,6 +58,6 @@ body {
     font-family: verdana;
 }
 
-h1 {
-
+h3 {
+    display: inline;
 }

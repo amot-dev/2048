@@ -4,7 +4,7 @@ $(document).ready(function() {
     $("#currentScore").text(score);                                     //update current score display
     $("#highScore").text(highScore);                                    //update high score display
     for (i = 0; i < 16; i++) {
-        $("#container").append('<div class="unit empty"> </div>');       //generate the 16 boxes
+        $("#container").append('<div class="unit empty"> </div>');  //generate the 16 boxes
     }
 
     addUnit();
@@ -16,6 +16,7 @@ $(document).ready(function() {
         var num = null;
         var num2 = null;
         var changesMade = false;
+        var mergeMade = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         if (e.keyCode == 38) {  //UP
             do {
                 changesMade = false;                                        //reset changes made value
@@ -34,8 +35,8 @@ $(document).ready(function() {
                             changesMade = true;                             //will redo the loop once it's done
                         }
 
-                        //check that the current unit has content and the one above does too
-                        if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.u]).hasClass("filled")) {
+                        //check that the current unit has content and the one above does too, also make sure tiles haven't been merged yet
+                        if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.u]).hasClass("filled") && mergeMade[i] == 0 && mergeMade[dir.u] == 0) {
                             num = $(thisUnit[i]).text();                    //save value of current unit
                             num2 = $(thisUnit[dir.u]).text();               //save value of unit above
                             if (num == num2) {
@@ -51,6 +52,11 @@ $(document).ready(function() {
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
                                 changesMade = true;                         //will redo the loop once it's done
+                                mergeMade[i] = 1;                           //tell the game to not merge this tile anymore
+                                for (x = 0; x < 16; x++) {
+                                    console.log("Tile " + x + " :" + mergeMade[x]);
+                                }
+                                console.log("----");
                             }
                         }
                     }
@@ -76,8 +82,8 @@ $(document).ready(function() {
                             changesMade = true;                             //will redo the loop once it's done
                         }
 
-                        //check that the current unit has content and the one below does too
-                        if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.d]).hasClass("filled")) {
+                        //check that the current unit has content and the one below does too, also make sure tiles haven't been merged yet
+                        if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.d]).hasClass("filled") && mergeMade[i] == 0 && mergeMade[dir.d] == 0) {
                             num = $(thisUnit[i]).text();                    //save value of current unit
                             num2 = $(thisUnit[dir.d]).text();               //save value of unit below
                             if (num == num2) {
@@ -93,6 +99,11 @@ $(document).ready(function() {
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
                                 changesMade = true;                         //will redo the loop once it's done
+                                mergeMade[i] = 1;                           //tell the game to not merge this tile anymore
+                                for (x = 0; x < 16; x++) {
+                                    console.log("Tile " + x + " :" + mergeMade[x]);
+                                }
+                                console.log("----");
                             }
                         }
                     }
@@ -118,8 +129,8 @@ $(document).ready(function() {
                             changesMade = true;                             //will redo the loop once it's done
                         }
 
-                        //check that the current unit has content and the one to the left does too
-                        if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.l]).hasClass("filled")) {
+                        //check that the current unit has content and the one to the left does too, also make sure tiles haven't been merged yet
+                        if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.l]).hasClass("filled") && mergeMade[i] == 0 && mergeMade[dir.l] == 0) {
                             num = $(thisUnit[i]).text();                    //save value of current unit
                             num2 = $(thisUnit[dir.l]).text();               //save value of unit to the left
                             if (num == num2) {
@@ -135,6 +146,11 @@ $(document).ready(function() {
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
                                 changesMade = true;                         //will redo the loop once it's done
+                                mergeMade[i] = 1;                           //tell the game to not merge this tile anymore
+                                for (x = 0; x < 16; x++) {
+                                    console.log("Tile " + x + " :" + mergeMade[x]);
+                                }
+                                console.log("----");
                             }
                         }
                     }
@@ -160,8 +176,8 @@ $(document).ready(function() {
                             changesMade = true;                             //will redo the loop once it's done
                         }
 
-                        //check that the current unit has content and the one to the right does too
-                        if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.r]).hasClass("filled")) {
+                        //check that the current unit has content and the one to the right does too, also make sure tiles haven't been merged yet
+                        if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.r]).hasClass("filled") && mergeMade[i] == 0 && mergeMade[dir.r] == 0) {
                             num = $(thisUnit[i]).text();                    //save value of current unit
                             num2 = $(thisUnit[dir.r]).text();               //save value of unit to the right
                             if (num == num2) {
@@ -177,6 +193,11 @@ $(document).ready(function() {
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
                                 changesMade = true;                         //will redo the loop once it's done
+                                mergeMade[i] = 1;                           //tell the game to not merge this tile anymore
+                                for (x = 0; x < 16; x++) {
+                                    console.log("Tile " + x + " :" + mergeMade[x]);
+                                }
+                                console.log("----");
                             }
                         }
                     }

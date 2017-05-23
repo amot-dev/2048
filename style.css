@@ -51,7 +51,7 @@ body {
     background-color: gray;
 }
 .filled {
-    background-color: orange;
+    color: red;
     line-height: 105px;
     text-align: center;
     font-size: 5em;
@@ -60,4 +60,55 @@ body {
 
 h3 {
     display: inline;
+}
+
+/* NUMBERS */
+
+.num2 {
+    background-color: #ebfaeb;
+}
+.num4 {
+    background-color: #d6f5d6;
+}
+.num8 {
+    background-color: #c2f0c2;
+}
+.num16 {
+    background-color: #adebad;
+}
+.num32 {
+    background-color: #99e699;
+}
+.num64 {
+    background-color: #85e085;
+}
+.num128 {
+    background-color: #70db70;
+}
+.num256 {
+    background-color: #5cd65c;
+}
+.num512 {
+    background-color: #47d147;
+}
+.num1024 {
+    background-color: #33cc33;
+}
+.num2048 {
+    background-color: #2eb82e;
+}
+.num4096 {
+    background-color: #29a329;
+}
+.num8192 {
+    background-color: #248f24;
+}
+.num16384 {
+    background-color: #1f7a1f;
+}
+.num32768 {
+    background-color: #196619;
+}
+.num65536 {
+    background-color: #145214;
 }

@@ -27,9 +27,11 @@ $(document).ready(function() {
                         if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.u]).hasClass("empty")) {
                             num = $(thisUnit[i]).text();                    //save value of current unit
                             $(thisUnit[dir.u]).toggleClass("empty filled"); //set unit above to filled
+                            $(thisUnit[dir.u]).addClass("num" + num);       //add number class to above
                             $(thisUnit[dir.u]).text(num);                   //set value of current to above
 
                             $(thisUnit[i]).toggleClass("filled empty");     //set current to empty
+                            $(thisUnit[i]).removeClass("num" + num);        //remove number class for current
                             $(thisUnit[i]).text(" ");                       //clear value of current
 
                             changesMade = true;                             //will redo the loop once it's done
@@ -41,6 +43,8 @@ $(document).ready(function() {
                             num2 = $(thisUnit[dir.u]).text();               //save value of unit above
                             if (num == num2) {
                                 $(thisUnit[dir.u]).text((num * 2));         //set value of current * 2 to above
+                                $(thisUnit[dir.u]).removeClass("num" + num);//change number class for above
+                                $(thisUnit[dir.u]).addClass("num" + num*2);
 
                                 score += (num * 2);                         //increase score
                                 if (score > highScore) {
@@ -49,6 +53,7 @@ $(document).ready(function() {
                                 }
 
                                 $(thisUnit[i]).toggleClass("filled empty"); //set current to empty
+                                $(thisUnit[i]).removeClass("num" + num);    //remove number class for current
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
                                 changesMade = true;                         //will redo the loop once it's done
@@ -74,9 +79,11 @@ $(document).ready(function() {
                         if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.d]).hasClass("empty")) {
                             num = $(thisUnit[i]).text();                    //save value of current unit
                             $(thisUnit[dir.d]).toggleClass("empty filled"); //set unit below to filled
+                            $(thisUnit[dir.d]).addClass("num" + num);       //add number class to below
                             $(thisUnit[dir.d]).text(num);                   //set value of current to below
 
                             $(thisUnit[i]).toggleClass("filled empty");     //set current to empty
+                            $(thisUnit[i]).removeClass("num" + num);        //remove number class for current
                             $(thisUnit[i]).text(" ");                       //clear value of current
 
                             changesMade = true;                             //will redo the loop once it's done
@@ -88,6 +95,8 @@ $(document).ready(function() {
                             num2 = $(thisUnit[dir.d]).text();               //save value of unit below
                             if (num == num2) {
                                 $(thisUnit[dir.d]).text((num * 2));         //set value of current * 2 to below
+                                $(thisUnit[dir.d]).removeClass("num" + num);//change number class for below
+                                $(thisUnit[dir.d]).addClass("num" + num*2);
 
                                 score += (num * 2);                         //increase score
                                 if (score > highScore) {
@@ -96,6 +105,7 @@ $(document).ready(function() {
                                 }
 
                                 $(thisUnit[i]).toggleClass("filled empty"); //set current to empty
+                                $(thisUnit[i]).removeClass("num" + num);    //remove number class for current
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
                                 changesMade = true;                         //will redo the loop once it's done
@@ -121,9 +131,11 @@ $(document).ready(function() {
                         if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.l]).hasClass("empty")) {
                             num = $(thisUnit[i]).text();                    //save value of current unit
                             $(thisUnit[dir.l]).toggleClass("empty filled"); //set unit to the left to filled
+                            $(thisUnit[dir.u]).addClass("num" + num);       //add number class to left
                             $(thisUnit[dir.l]).text(num);                   //set value of current to left
 
                             $(thisUnit[i]).toggleClass("filled empty");     //set current to empty
+                            $(thisUnit[i]).removeClass("num" + num);        //remove number class for current
                             $(thisUnit[i]).text(" ");                       //clear value of current
 
                             changesMade = true;                             //will redo the loop once it's done
@@ -135,6 +147,8 @@ $(document).ready(function() {
                             num2 = $(thisUnit[dir.l]).text();               //save value of unit to the left
                             if (num == num2) {
                                 $(thisUnit[dir.l]).text((num * 2));         //set value of current * 2 to left
+                                $(thisUnit[dir.l]).removeClass("num" + num);//change number class for left
+                                $(thisUnit[dir.l]).addClass("num" + num*2);
 
                                 score += (num * 2);                         //increase score
                                 if (score > highScore) {
@@ -143,6 +157,7 @@ $(document).ready(function() {
                                 }
 
                                 $(thisUnit[i]).toggleClass("filled empty"); //set current to empty
+                                $(thisUnit[i]).removeClass("num" + num);    //remove number class for current
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
                                 changesMade = true;                         //will redo the loop once it's done
@@ -168,9 +183,11 @@ $(document).ready(function() {
                         if ($(thisUnit[i]).hasClass("filled") && $(thisUnit[dir.r]).hasClass("empty")) {
                             num = $(thisUnit[i]).text();                    //save value of current unit
                             $(thisUnit[dir.r]).toggleClass("empty filled"); //set unit to the right to filled
+                            $(thisUnit[dir.u]).addClass("num" + num);       //add number class to above
                             $(thisUnit[dir.r]).text(num);                   //set value of current to right
 
                             $(thisUnit[i]).toggleClass("filled empty");     //set current to empty
+                            $(thisUnit[i]).removeClass("num" + num);        //remove number class for current
                             $(thisUnit[i]).text(" ");                       //clear value of current
 
                             changesMade = true;                             //will redo the loop once it's done
@@ -182,6 +199,8 @@ $(document).ready(function() {
                             num2 = $(thisUnit[dir.r]).text();               //save value of unit to the right
                             if (num == num2) {
                                 $(thisUnit[dir.r]).text((num * 2));         //set value of current * 2 to right
+                                $(thisUnit[dir.r]).removeClass("num" + num);//change number class for right
+                                $(thisUnit[dir.r]).addClass("num" + num*2);
 
                                 score += (num * 2);                         //increase score
                                 if (score > highScore) {
@@ -190,6 +209,7 @@ $(document).ready(function() {
                                 }
 
                                 $(thisUnit[i]).toggleClass("filled empty"); //set current to empty
+                                $(thisUnit[i]).removeClass("num" + num);    //remove number class for current
                                 $(thisUnit[i]).text(" ");                   //clear value of current
 
                                 changesMade = true;                         //will redo the loop once it's done
@@ -259,7 +279,8 @@ $(document).ready(function() {
         else {
             startingNumber = "4";
         }
-        $(thisUnit[unitSelector]).toggleClass('empty filled');         //add random number to random div
-        $(thisUnit[unitSelector]).text(startingNumber);
+        $(thisUnit[unitSelector]).toggleClass('empty filled');          //add random number to random div
+        $(thisUnit[unitSelector]).text(startingNumber);                 //set number
+        $(thisUnit[unitSelector]).addClass("num" + startingNumber);     //set class for number
     }
 })

@@ -257,7 +257,7 @@ $(document).ready(function() {
             startingNumber = "4";
         }
         $(thisUnit[unitSelector]).toggleClass('empty filled');          //add random number to random div
-        $(thisUnit[unitSelector]).text(startingNumber);                 //set number
-        $(thisUnit[unitSelector]).addClass("num" + startingNumber);     //set class for number
+        $(thisUnit[unitSelector]).text(startingNumber).fadeIn();        //set number
+        $(thisUnit[unitSelector]).addClass("num" + startingNumber).fadeIn();//set class for number
     }
 })
